@@ -102,6 +102,7 @@ dbutils.notebook.run(path="NotebookSimilarity",
 
 ##### Limitations
 - If a notebook name contains a "/" character, this notebook will currently be ignored.
+- If an exported notebook contents exceeds (10 MB), the notebook will not be processed.
 - The Notebook Discovery Index parquet file is a static point in time snapshot.  If your notebooks are updated regularly, then you may want to rerun the NotebookIndexRun on a regular basis (such as weekly).
 - The notebooks to be indexed by Notebook Discovery must be stored in the Databricks workspace and not an external repository such as github.
 - The notebooks to be indexed by Notebook Discovery must have read permissions for the user that runs NotebookIndexRun.
