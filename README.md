@@ -29,7 +29,7 @@ Notebook Discovery consists of 3  notebooks.
 
 ##### Download
 
-Notebook Discovery is provided as a [download](https://github.com/elsevierlabs-os/NotebookDiscovery/tree/main/download/NotebookDiscovery-1.0.0.dbc).  This is a DBC (Databricks archive) file.
+Notebook Discovery is provided as a [download](https://github.com/elsevierlabs-os/NotebookDiscovery/tree/main/download/NotebookDiscovery-1.0.1.dbc).  This is a DBC (Databricks archive) file.
 
 
 ##### Installation
