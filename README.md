@@ -29,7 +29,7 @@ Notebook Discovery consists of 3  notebooks.
 
 ##### Download
 
-Notebook Discovery is provided as a [download](https://github.com/elsevierlabs-os/NotebookDiscovery/tree/main/download/NotebookDiscovery-1.0.3.dbc).  This is a DBC (Databricks archive) file.
+Notebook Discovery is provided as a [download](https://github.com/elsevierlabs-os/NotebookDiscovery/tree/main/download/NotebookDiscovery-1.0.4.dbc).  This is a DBC (Databricks archive) file.
 
 
 ##### Installation
@@ -46,6 +46,7 @@ In addition to the 3 notebooks discussed above, there are also a couple of run n
     - path. The location of the notebook to run (in this case NotebookIndex).  It is assumed this notebook is in the same folder as it's run notebook.
     - timeoutSeconds.  Number of seconds to allow for the notebook execution (currently set at 2 hours).
     - folders.  Comma separated list of workspace folders to crawl when generating the Notebook Discovery Index.
+    - excludes. Comma separated list of glob patterns to ignore files for processing (optional)
     - indexFilename. Where to place the generated  Notebook Discovery Index parquet file.  Typically an area mounted on Databricks.
     - overwrite. Whether the Notebook Discovery Index parquet file should be overwritten if it already exists.  'False' will not overwrite.  'True' will overwrite.
     - parallelization. The number of concurrent requests that will be sent to Databricks through the REST APIs when creating the index (currently set at 8).
@@ -57,6 +58,10 @@ dbutils.notebook.run(path="NotebookIndex",
                                                             /Users/someone1@elsevier.com/,
                                                             /Users/someone2@elsevier.com/
                                                             """,
+                                            "excludes" -> """
+                                                             /**/test/**,
+                                                             /**/private/**
+                                                          """,
                                             "indexFilename" -> "/mnt/some-mount-point/DatabricksNotebookSearch/index",
                                             "overwrite" -> "False",
                                             "parallelization" -> "8"))                                            
